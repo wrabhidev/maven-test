@@ -1,4 +1,4 @@
-package vie.pi.web;
+package vie.pi.config;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
@@ -24,8 +24,8 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis((Predicate<RequestHandler>) RequestHandlerSelectors.basePackage("vie.pi.web"))
-                .paths((Predicate<String>) regex("/enre.*"))
-                .build()
+                .paths((Predicate<String>) regex("/api/enre.*"))
+                .build() 
                 .apiInfo(metaData());
     }
     private ApiInfo metaData() {
